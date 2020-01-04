@@ -1,0 +1,135 @@
+package training;
+
+
+import java.util.*;
+
+
+
+/* Q. Write a Java Program for following requirements
+Take input from User for ID, Name, Showdate, Showtime, Status
+Create movie object and populate above details
+Store the object in an ArrayList
+Take input from user for ID and display the details in the movie object of that ID.
+- User Interface should be in class having main method
+- Storage should be in Data Access Object
+
+- Ensure proper coding standards, naming conventions, OOP concepts */ 
+
+public class Movie {
+	static int ID;
+	String Name;
+	String Showdate;
+	String Showtime;
+	String Status;
+
+	public Movie() {}
+	
+	public Movie(int iD, String name, String showdate, String showtime, String status) {
+		super();
+		ID = iD;
+		Name = name;
+		Showdate = showdate;
+		Showtime = showtime;
+		Status = status;
+	}
+	
+	
+	
+	public int getID() {
+		return ID;
+	}
+
+	public void setID(int iD) {
+		ID = iD;
+	}
+
+	public String getName() {
+		return Name;
+	}
+
+	public void setName(String name) {
+		Name = name;
+	}
+
+	public String getShowdate() {
+		return Showdate;
+	}
+
+	public void setShowdate(String showdate) {
+		Showdate = showdate;
+	}
+
+	public String getShowtime() {
+		return Showtime;
+	}
+
+	public void setShowtime(String showtime) {
+		Showtime = showtime;
+	}
+
+	public String getStatus() {
+		return Status;
+	}
+
+	public void setStatus(String status) {
+		Status = status;
+	}
+
+	@Override
+	public String toString() {
+		return "Movie [ID=" + ID + ", Name=" + Name + ", Showdate=" + Showdate + ", Showtime=" + Showtime + ", Status="
+				+ Status + "]";
+	}
+
+	public static void main(String[] args) {
+		
+		ArrayList<Object> a1 = new ArrayList<Object>();
+		Scanner sc=new Scanner(System.in);
+		
+		
+			System.out.println("Enter number of fields to be added:");
+			int n=sc.nextInt();
+			for(int i=0;i<n;i++) {
+				System.out.println("Enter ID:");
+				int ID= sc.nextInt();
+				System.out.println("Enter Name:");
+				String Name=sc.next();
+				System.out.println("Enter Showdate:");
+				String Showdate=sc.next();
+				System.out.println("Enter Showtime:");
+				String Showtime=sc.next();
+				System.out.println("Status:");
+				String Status=sc.next();
+				Movie m=new Movie(ID,Name,Showdate,Showtime,Status);
+				a1.add(m);
+			}
+			
+			
+			//System.out.println(a1);
+			System.out.println("Enter ID for which details are to be displayed:");
+			int id_to_access=sc.nextInt();
+			if(id_to_access==1) {
+				System.out.println(a1.get(0));
+			}
+			else if(id_to_access==2) {
+				System.out.println(a1.get(1));
+			}
+			
+			
+			 
+					
+				}
+				
+			
+				
+			
+				
+		
+		
+	}
+
+		
+		
+		
+		
+		
